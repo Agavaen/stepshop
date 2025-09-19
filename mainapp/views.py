@@ -6,4 +6,9 @@ def index(request):
 
 
 def contacts(request):
-    return render(request, 'contacts.html')
+    title = 'Контакты - StepShop'
+
+    context = {
+        'title': title,
+    }
+    return render(request, 'contacts.html', context)
