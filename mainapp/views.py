@@ -1,8 +1,14 @@
 from django.shortcuts import render
+from django.template.defaultfilters import title
 
 
 def index(request):
-    return render(request, 'index.html')
+    title = 'Главная - StepShop'
+
+    context = {
+        'title': title,
+    }
+    return render(request, 'index.html', context)
 
 def contacts(request):
     title = 'Контакты - StepShop'
@@ -19,3 +25,19 @@ def product(request):
         'title': title,
     }
     return render(request, 'Product.html', context)
+
+def products(request):
+    title = 'Товары - StepShop'
+
+    context = {
+        'title': title,
+    }
+    return render(request, 'Products.html', context)
+
+def about(request):
+    title = 'О нас - StepShop'
+
+    context = {
+        'title': title,
+    }
+    return render(request, 'about.html', context)
